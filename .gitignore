@@ -1,5 +1,5 @@
-# Medical images (DICOM, archives, etc.) — not tracked
-**/images/
+# Large installers / disk images — exceed GitHub's 100 MB limit
+*.dmg
 
 # OS / editor cruft
 .DS_Store

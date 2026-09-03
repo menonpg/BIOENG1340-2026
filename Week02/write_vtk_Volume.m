@@ -7,6 +7,9 @@ function write_vtk_Volume(array, Spacing, filename)
 
     [nx, ny, nz] = size(array);
     fid = fopen(filename, 'wt');
+    if fid == -1
+        error('write_vtk_Volume:fopen', 'Could not open %s for writing.', filename);
+    end
     fprintf(fid, '# vtk DataFile Version 2.0\n');
     fprintf(fid, 'Comment goes here\n');
     fprintf(fid, 'ASCII\n');
@@ -15,19 +18,19 @@ function write_vtk_Volume(array, Spacing, filename)
     fprintf(fid, 'DIMENSIONS    %d   %d   %d\n', nx, ny, nz);
     fprintf(fid, '\n');
     fprintf(fid, 'ORIGIN    0.000   0.000   0.000\n');
-    fprintf(fid, 'SPACING   %d   %d  %d \n', Spacing(1),Spacing(2),Spacing(3));
+    fprintf(fid, 'SPACING   %g   %g   %g\n', Spacing(1), Spacing(2), Spacing(3));
     fprintf(fid, '\n');
     fprintf(fid, 'POINT_DATA   %d\n', nx*ny*nz);
     fprintf(fid, 'SCALARS scalars double\n');
     fprintf(fid, 'LOOKUP_TABLE default\n');
     fprintf(fid, '\n');
-    for a=1:nz
-        for b=1:ny
-            for c=1:nx
-                fprintf(fid, '%d ', array(c,b,a));
-            end
-            fprintf(fid, '\n');
-        end
-    end
+
+    % VTK STRUCTURED_POINTS order is x fastest, then y, then z, which matches
+    % MATLAB's column-major linear order of an (nx,ny,nz) array. Write the whole
+    % volume in one vectorized call (nx values per line) so the export cannot be
+    % truncated by a slow per-voxel loop.
+    values = reshape(double(array), nx, []);
+    fprintf(fid, [repmat('%g ', 1, nx) '\n'], values);
+
     fclose(fid);
 return

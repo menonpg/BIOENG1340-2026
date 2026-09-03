@@ -26,32 +26,16 @@ imshow(Islice',[min(Islice(:)), max(Islice(:))]);
 %% Write vtk volume out
 filename = "pigdicomstack_flippedZ.vtk";
 Spacing = [1.5, 1.5, 4.5];
-% write_vtk_Volume(I_stack, Spacing, filename);
+write_vtk_Volume(I_stack, Spacing, filename);
 
-array = I_stack;
+% Verify the export is complete: value count must equal nx*ny*nz.
+expected = numel(I_stack);
+txt = fileread(filename);
+actual = numel(sscanf(txt(strfind(txt, 'LOOKUP_TABLE default') + 20 : end), '%g'));
+fprintf('VTK export: expected %d values, wrote %d (%s)\n', ...
+    expected, actual, string(actual == expected));
 
-[nx, ny, nz] = size(array);
-fid = fopen(filename, 'wt');
-fprintf(fid, '# vtk DataFile Version 2.0\n');
-fprintf(fid, 'Comment goes here\n');
-fprintf(fid, 'ASCII\n');
-fprintf(fid, '\n');
-fprintf(fid, 'DATASET STRUCTURED_POINTS\n');
-fprintf(fid, 'DIMENSIONS    %d   %d   %d\n', nx, ny, nz);
-fprintf(fid, '\n');
-fprintf(fid, 'ORIGIN    0.000   0.000   0.000\n');
-fprintf(fid, 'SPACING   %d   %d  %d \n', Spacing(1),Spacing(2),Spacing(3));
-fprintf(fid, '\n');
-fprintf(fid, 'POINT_DATA   %d\n', nx*ny*nz);
-fprintf(fid, 'SCALARS scalars double\n');
-fprintf(fid, 'LOOKUP_TABLE default\n');
-fprintf(fid, '\n');
-for a=1:nz
-    for b=1:ny
-        for c=1:nx
-            fprintf(fid, '%d ', array(c,b,a));
-        end
-        fprintf(fid, '\n');
-    end
-end
-fclose(fid);
+
+%% Try another writing method
+filename = "pigdicomstack_flippedZ_1.vtk";
+write_vtk_Volume(I_stack, Spacing, filename);
