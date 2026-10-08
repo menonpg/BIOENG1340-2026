@@ -14,7 +14,7 @@ visualization tools (ITK-SNAP, ParaView).
 | [Week04](Week04/) | SNR & CNR | Synthetic two-circle images, per-region SNR/CNR, statistical tests, and signal averaging. See [Week04/README.md](Week04/README.md). |
 | [Week05](Week05/) | MR physics: Larmor, Bloch & slice selection | Gyromagnetic ratio, Bloch-equation relaxation ($T_1/T_2$), tumor-vs-normal contrast, and z-gradient slice selection. See [Week05/README.md](Week05/README.md). |
 | [Week06](Week06/) | MRI image formation quiz solutions | Worked answers on precession, FID, Bloch equations, relaxation, and slice selection. See [Week06/README.md](Week06/README.md). |
-| [Week07](Week07/) | Spatial localization & k-space | Frequency/phase encoding, k-space, projection/Radon reconstruction, and the gradient-echo pulse sequence. See [Week07/README.md](Week07/README.md). |
+| [Week07](Week07/) | Spatial localization, pulse sequences & k-space | Frequency/phase encoding, k-space & Radon reconstruction, gradient/spin echo, contrast (T1/T2/PD), and BOLD/fMRI. See [Week07/README.md](Week07/README.md). |
 
 ## Working with the data
 
