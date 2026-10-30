@@ -1,0 +1,18 @@
+title: BIOENG 1340/2340 — Medical Image Processing &amp; Analysis
+description: >-
+  Course materials, runnable notebooks, and team projects for BIOENG 1340/2340
+  (Fall 2026): MRI and CT/X-ray image formation, reconstruction, and analysis.
+theme: jekyll-theme-cayman
+baseurl: "/BIOENG1340-2026"
+url: "https://menonpg.github.io"
+
+# Pretty, extensionless URLs and auto-rewrite of .md links to .html
+permalink: pretty
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+
+exclude:
+  - "*.py"
