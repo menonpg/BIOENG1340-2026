@@ -26,6 +26,8 @@ NBVIEWER = f"https://nbviewer.org/github/{REPO}/blob/{BRANCH}"
 COLAB = f"https://colab.research.google.com/github/{REPO}/blob/{BRANCH}"
 RAW = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}"
 
+INSTRUCTOR = "Prahlad Menon, PhD, PMP"
+
 
 def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
@@ -170,6 +172,7 @@ def main() -> None:
     main_title, main_summary = readme_title_summary(ROOT)
     home = [fm(main_title)]
     home.append(f"{main_summary}\n" if main_summary else "")
+    home.append(f"**Instructor:** {INSTRUCTOR}\n")
     home.append("## Weeks\n")
     home.append("| Week | Topic | Notebooks |")
     home.append("|------|-------|-----------|")
@@ -191,6 +194,7 @@ def main() -> None:
     # --- about ---
     about = [fm("About / Syllabus")]
     about.append(main_summary + "\n")
+    about.append(f"**Instructor:** {INSTRUCTOR}\n")
     about.append("## Course arc\n")
     for wk in weeks:
         wtitle, _ = readme_title_summary(wk)

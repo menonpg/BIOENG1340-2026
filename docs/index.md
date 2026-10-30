@@ -4,6 +4,8 @@ title: "BIOENG1340-2026"
 
 Course materials and coursework for **BIOENG 1340/2340 (Fall 2026)**: medical image processing and analysis using MATLAB, Python (SimpleITK), and 3D visualization tools (ITK-SNAP, ParaView).
 
+**Instructor:** Prahlad Menon, PhD, PMP
+
 ## Weeks
 
 | Week | Topic | Notebooks |

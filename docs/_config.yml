@@ -2,6 +2,8 @@ title: BIOENG 1340/2340 — Medical Image Processing &amp; Analysis
 description: >-
   Course materials, runnable notebooks, and team projects for BIOENG 1340/2340
   (Fall 2026): MRI and CT/X-ray image formation, reconstruction, and analysis.
+  Instructor: Prahlad Menon, PhD, PMP.
+author: Prahlad Menon, PhD, PMP
 theme: jekyll-theme-cayman
 baseurl: "/BIOENG1340-2026"
 url: "https://menonpg.github.io"
