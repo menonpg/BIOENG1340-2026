@@ -3,7 +3,7 @@ title: "Week 11 — Quantifying a Segmentation: Volume & Shape"
 week: Week11
 ---
 
-*Week11 · 5 code cells*
+*Week11 · 6 code cells*
 
 Once you have a **3-D segmentation mask** (from ITK-SNAP, ParaView, or an AI model), the next step is to turn it into **numbers**: a physical **volume** and **shape descriptors**. This is the core measurement step for several class projects (hippocampus volume, left-ventricle volume over time, optic-nerve-head vessel morphology).
 
