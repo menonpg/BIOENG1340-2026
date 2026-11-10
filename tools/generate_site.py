@@ -133,7 +133,10 @@ def main() -> None:
         f.unlink()
     for f in DOCS.glob("week*.md"):
         f.unlink()
-    weeks = sorted(p for p in ROOT.glob("Week*") if p.is_dir())
+    weeks = sorted(
+        p for p in ROOT.glob("Week*")
+        if p.is_dir() and ((p / "README.md").exists() or any(p.glob("*.ipynb")))
+    )
 
     week_meta: list[tuple[str, str, int]] = []       # (Week name, topic, n notebooks)
     all_nb: list[tuple[str, str, str, str]] = []     # (week, title, page_slug, rel_path)
