@@ -27,7 +27,8 @@ hero: true
 <a class="card" href="{{ '/week08/' | relative_url }}"><span class="card-week">Week 08</span><span class="card-topic">X-ray &amp; CT Image Formation</span><span class="card-meta">2 notebooks</span></a>
 <a class="card" href="{{ '/week09/' | relative_url }}"><span class="card-week">Week 09</span><span class="card-topic">Algebraic CT Reconstruction &amp; Study Design</span><span class="card-meta">2 notebooks</span></a>
 <a class="card" href="{{ '/week10/' | relative_url }}"><span class="card-week">Week 10</span><span class="card-topic">CT Image Formation &amp; Reconstruction</span><span class="card-meta">3 notebooks</span></a>
-<a class="card" href="{{ '/week11/' | relative_url }}"><span class="card-week">Week 11</span><span class="card-topic">CT Artifacts, Contrast Agents, Nuclear Imaging, Dosimetry &amp; Project Methods</span><span class="card-meta">7 notebooks</span></a>
+<a class="card" href="{{ '/week11/' | relative_url }}"><span class="card-week">Week 11</span><span class="card-topic">CT Artifacts, Contrast Agents, Dosimetry &amp; Group Statistics</span><span class="card-meta">4 notebooks</span></a>
+<a class="card" href="{{ '/week12/' | relative_url }}"><span class="card-week">Week 12</span><span class="card-topic">Nuclear Imaging, SPECT/PET &amp; Project Methods Review</span><span class="card-meta">3 notebooks</span></a>
 </div>
 <div class="explore">
   <a class="pill" href="{{ '/notebooks/' | relative_url }}">All notebooks</a>

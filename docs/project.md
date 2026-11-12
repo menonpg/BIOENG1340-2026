@@ -87,13 +87,13 @@ ideally automatic ROI** to keep the segmentation workload tractable.
 | Jen Hu & Yosi | **fMRI functional connectivity.** DP vs controls, **15 participants** (unfamiliar-with-video subset). Aim 1: quantify **inter-individual variability** in FC (ROI BOLD time series → correlations → distance of each profile from the **group centroid**). Aim 2: visualize significant connections on a **3-D brain model**. ROI selection in progress (3 regions: 2 face-selective + 1 higher-order). | **4-D fMRI** time series; **SPM12 / FSL**; challenge = consistent ROI across time points **and** subjects → prefer easy regions (ventricles, gray/white matter, corpus callosum). |
 | Xinyue & Shiqi | **Optic-nerve-head microvasculature across species.** Title: *Development of a 3-D microvascular segmentation pipeline and characterization of optic-nerve-head vascular architecture across species.* Aim 1: 3-D vessel segmentation + **skeletonization** → network parameters (pipeline working, **>95%** precision vs manual). Aim 2: cross-species characterization (needs more samples, 1–2/species). Rushing ahead of a busy finals month. | **VesselFM** (CVPR 2025 dynamic **U-Net**) segmentation; centerline tracing; **Fiji/ImageJ BigTiff** plugin to **downsample** ~**2 TB** volumes (8–32×). |
 
-**Methods captured as runnable notebooks (Week 11):**
+**Methods captured as runnable notebooks (current locations):**
 
-- **Volume & shape from a mask** — [Week11/SegmentationQuantification.ipynb](../Week11/SegmentationQuantification.ipynb)
+- **Volume & shape from a mask** — [Week12/SegmentationQuantification.ipynb](../Week12/SegmentationQuantification.ipynb)
   (voxel-count volume; SimpleITK/`regionprops` elongation, roundness, sphericity).
 - **Two-group statistics** — [Week11/ComparingTwoGroups.ipynb](../Week11/ComparingTwoGroups.ipynb)
   (Shapiro–Wilk → t-test vs Mann–Whitney, Cohen's $d$, power/cohort size).
-- **Ultrasound M-mode** — [Week11/Ultrasound_MMode.ipynb](../Week11/Ultrasound_MMode.ipynb)
+- **Ultrasound M-mode** — [Week12/Ultrasound_MMode.ipynb](../Week12/Ultrasound_MMode.ipynb)
   (a time-axis slice of a stacked video volume; heart rate by FFT).
 - **Power / cohort size** — [Week09/CohortSizeDetermination.ipynb](../Week09/CohortSizeDetermination.ipynb).
 
