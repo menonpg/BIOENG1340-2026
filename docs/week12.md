@@ -26,4 +26,10 @@ A preview of ultrasound imaging, motivated by the echocardiography project (stac
 
 [View on GitHub](https://github.com/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_MMode.ipynb) · [nbviewer](https://nbviewer.org/github/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_MMode.ipynb) · [Open in Colab](https://colab.research.google.com/github/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_MMode.ipynb) · [Download](https://raw.githubusercontent.com/menonpg/BIOENG1340-2026/main/Week12/Ultrasound_MMode.ipynb)
 
+### [Week 12 — Ultrasound point spread function: why a swept scan line gives a teardrop]({{ '/notebooks/week12-ultrasound-psf-convolution/' | relative_url }})
+
+Every imaging system blurs. If is the true image (the tissue reflectivity we would like to see) and the system has a convolution kernel (its **point spread function**, PSF), the measured, digitized image is
+
+[View on GitHub](https://github.com/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_PSF_Convolution.ipynb) · [nbviewer](https://nbviewer.org/github/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_PSF_Convolution.ipynb) · [Open in Colab](https://colab.research.google.com/github/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_PSF_Convolution.ipynb) · [Download](https://raw.githubusercontent.com/menonpg/BIOENG1340-2026/main/Week12/Ultrasound_PSF_Convolution.ipynb)
+
 <p class="backlinks"><a href="{{ '/' | relative_url }}">← Home</a> · <a href="{{ '/notebooks/' | relative_url }}">All notebooks</a></p>

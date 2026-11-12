@@ -8,6 +8,7 @@
 |------|-------------|
 | [NuclearImaging_PET_SPECT.ipynb](NuclearImaging_PET_SPECT.ipynb) | Radiotracer decay and activity; emission tomography and Poisson counting; SPECT Anger cameras vs PET coincidence detection; count/SNR trade-offs; and functional–anatomical fusion. Includes a PET line-of-response simulation. |
 | [SegmentationQuantification.ipynb](SegmentationQuantification.ipynb) | Convert a labeled 3-D mask into physical volume and shape descriptors using voxel spacing, SimpleITK, and scikit-image; includes export of a labeled NIfTI volume. |
+| [Ultrasound_PSF_Convolution.ipynb](Ultrasound_PSF_Convolution.ipynb) | Simulate a swept-sector ultrasound scan to show why the point spread function is teardrop-shaped, using $J = I * H$ in beam coordinates, scan conversion to the display, a blurred phantom, and axial vs lateral resolution vs depth. |
 | [Ultrasound_MMode.ipynb](Ultrasound_MMode.ipynb) | Build an M-mode image from a scan line through B-mode frames over time, then estimate periodic wall motion / heart rate with frequency analysis. |
 
 ## Lecture notes
@@ -23,6 +24,15 @@ The mask can be represented as a SimpleITK image with spacing metadata and expor
 ### Review: ultrasound M-mode
 
 B-mode is a 2-D brightness image repeated over time. M-mode follows one scan line through those frames and stacks the line profiles, producing a depth-by-time image. The time series of a moving wall can then be analyzed (for example, with a power spectrum) to estimate a dominant motion frequency or heart rate.
+
+### Ultrasound: the teardrop point spread function
+
+If $I$ is the original image and the imaging system has convolution kernel $H$, the measured, digitized image is
+$J = I * H$. In a swept-beam ultrasound scanner the kernel for a point reflector is **teardrop-shaped**: a wide
+leading edge at the true depth and a tail that tapers with depth. The tail comes from the ringing pulse, and the narrowing
+comes from the fixed physical beamwidth subtending a smaller angle at greater range. Because the beam swings, the teardrop
+rotates with the scan angle so it points away from the apex. The kernel is nearly shift-invariant in the scanner's
+$(r,\theta)$ coordinates but shift-variant after scan conversion to the $(x,y)$ display.
 
 ### Nuclear imaging: emission and reconstruction
 
