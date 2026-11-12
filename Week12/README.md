@@ -9,6 +9,7 @@
 | [NuclearImaging_PET_SPECT.ipynb](NuclearImaging_PET_SPECT.ipynb) | Radiotracer decay and activity; emission tomography and Poisson counting; SPECT Anger cameras vs PET coincidence detection; count/SNR trade-offs; and functional–anatomical fusion. Includes a PET line-of-response simulation. |
 | [SegmentationQuantification.ipynb](SegmentationQuantification.ipynb) | Convert a labeled 3-D mask into physical volume and shape descriptors using voxel spacing, SimpleITK, and scikit-image; includes export of a labeled NIfTI volume. |
 | [Ultrasound_PSF_Convolution.ipynb](Ultrasound_PSF_Convolution.ipynb) | Simulate a swept-sector ultrasound scan to show why the point spread function is teardrop-shaped, using $J = I * H$ in beam coordinates, scan conversion to the display, a blurred phantom, and axial vs lateral resolution vs depth. |
+| [Ultrasound_Impedance_Attenuation.ipynb](Ultrasound_Impedance_Attenuation.ipynb) | Acoustic impedance $Z=\rho c$ and the reflection coefficient at boundaries; Beer–Lambert attenuation and the resolution/penetration trade-off; build an A-line and a B-mode image of a phantom (cyst, stone), with time-gain compensation, shadowing, posterior enhancement, and a frequency comparison. |
 | [Ultrasound_MMode.ipynb](Ultrasound_MMode.ipynb) | Build an M-mode image from a scan line through B-mode frames over time, then estimate periodic wall motion / heart rate with frequency analysis. |
 
 ## Lecture notes
@@ -33,6 +34,16 @@ leading edge at the true depth and a tail that tapers with depth. The tail comes
 comes from the fixed physical beamwidth subtending a smaller angle at greater range. Because the beam swings, the teardrop
 rotates with the scan angle so it points away from the apex. The kernel is nearly shift-invariant in the scanner's
 $(r,\theta)$ coordinates but shift-variant after scan conversion to the $(x,y)$ display.
+
+### Ultrasound: impedance, attenuation, and image formation
+
+A scanning probe collects line data: scatterers and boundaries along each line come back as echoes because they present an
+acoustic impedance mismatch to the pressure wave. Impedance is $Z=\rho c$ (so it is tied to the speed of sound in each
+medium), and the fraction of pressure reflected at a boundary is $R=(Z_2-Z_1)/(Z_2+Z_1)$. Between soft tissues $R$ is small, so
+most energy continues deeper; tissue–air and tissue–bone boundaries reflect strongly. Along the path the pulse is attenuated
+according to Beer–Lambert, $I=I_0e^{-\mu z}$ or $-2\alpha f z$ dB for the round trip, with $\alpha\approx0.5$ dB/cm/MHz in soft
+tissue. Modeling $Z(z)$ and $\alpha(z)$ lets us simulate image formation and explains shadowing, posterior enhancement,
+time-gain compensation, and the resolution/penetration trade-off with frequency.
 
 ### Nuclear imaging: emission and reconstruction
 
