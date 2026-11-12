@@ -94,3 +94,31 @@ ideally automatic ROI** to keep the segmentation workload tractable.
 - **Ultrasound M-mode** — [Week12/Ultrasound_MMode.ipynb](../Week12/Ultrasound_MMode.ipynb)
   (a time-axis slice of a stacked video volume; heart rate by FFT).
 - **Power / cohort size** — [Week09/CohortSizeDetermination.ipynb](../Week09/CohortSizeDetermination.ipynb).
+
+## Fourth discussion (Nov 12) — Kanban stand-ups
+
+A first **agile-style stand-up**, as it would run in industry: each team shares its Kanban board and says what is
+in progress, what is next, and any blockers. About three weeks remain (including Thanksgiving). A formal
+**midterm project review** will be held next Thursday or on the first class of the last week of November.
+Teams should make a big push before **Tuesday** toward an **end-to-end pipeline on one subject**.
+
+**General guidance for every team**
+
+- Add the **specific aims as a roll-up** card, and put the whole **backlog** on the board (poster, slides, midterm
+  review, report), then move items along. With four weeks this is roughly two sprints on a single board.
+- Add a card to explain the **imaging modality and sequence/protocol** used (MRI, CT, ultrasound B-mode or M-mode, ...):
+  what intensity means, what the sequence is for, and why it suits your question.
+- Update the **specific-aims cell (H6)** in the class Excel workbook.
+- Take **screenshots** and explain each processing step (for example FSL steps) so the workflow can go into the poster.
+
+| Team | Update | Plan / blockers | Guidance |
+|------|--------|-----------------|----------|
+| Xinyue & Shiqi (retinal vasculature) | Pipeline is in place; adding **more replicates** because sample counts are small. Pig, sheep, and goat done; adding **human** and **monkey**. | Working on a very large human sample (terabyte scale); will show next week how to **convert it to manageable data** (downsampling). | Keep the task-level cards, but add the aims roll-up and backlog. |
+| Christian & Hanna (echocardiography) | Six planned cards, color-coded by owner. Christian: classical CV **segmentation of the left ventricle** to build the Z-stack. Hanna: an alternative approach using the **voxel formation** of the stacked volume. | Next: consider phases beyond systole/diastole; **compare the two segmentation methods** and ITK-SNAP; final poster and report. | Move active items out of Plan; good use of the board. |
+| Harrison & Ashvin (Alzheimer's hippocampus) | Slide deck drafted: hypothesis, cohort selection and screening of a **64-person sample**, workflow (also drawn as a Kanban flow), segmentation, group comparison, design measures, next steps. Kanban board active with split workflows (segmentation, volume, shape, figures, poster). | **Hippocampus segmentation** is hard to isolate in ParaView (it curves upward and back); volume via ParaView voxel counting and shape via MATLAB. Fallback: **ventricles**, which are easier to see. Data are skull-stripped with FSL. | The hippocampus will not isolate by iso-contouring: find a **tutorial** for the region. Reuse the Week 12 **shape-analysis code**; the mask is the slow part. Run **one patient end to end**, time it, then decide cohort size (for example 10 patients and 10 controls). |
+| Jen & Yosi (fMRI connectivity) | **Batch preprocessing** under way; building a standard for **ROI** definition and functional-connectivity extraction. All data collected. | Plan next week: evaluate the ROI and signal extraction from it. Yosi hit an FSL issue and is installing **BASIL** (an FSL tool normally used for perfusion MRI) for the analysis. | Routine ("commoditized") analysis can be written in Python or the class notebooks; specialized steps can use an existing package. Yosi plans to tie each poster step to the lecture where the method was taught. |
+
+**Tools and ideas mentioned:** ParaView (segmentation, voxel-count volume), ITK-SNAP, MATLAB `regionprops` and Python
+shape features ([Week12/SegmentationQuantification.ipynb](../Week12/SegmentationQuantification.ipynb)), FSL (skull
+stripping, registration, orientation, preprocessing), BASIL, and statistics from
+[Week11/ComparingTwoGroups.ipynb](../Week11/ComparingTwoGroups.ipynb).

@@ -1,8 +1,8 @@
 ---
-title: "Week 12 — Nuclear Imaging, SPECT/PET & Project Methods Review"
+title: "Week 12 — Nuclear Imaging, Ultrasound Physics & Project Stand-ups"
 ---
 
-**Lecture 1 (Nov 10)** opened with a review of project-analysis notebooks from Week 11, then developed nuclear imaging from radiotracer physics through SPECT/PET acquisition, reconstruction, and image fusion. The notebook locations now reflect the material used in this lecture.
+**Lecture 1 (Nov 10)** opened with a review of project-analysis notebooks from Week 11, then developed nuclear imaging from radiotracer physics through SPECT/PET acquisition, reconstruction, and image fusion. **Lecture 2 (Nov 12)** began with the first Kanban-style project stand-ups, then introduced **ultrasound** physics and image formation: pressure-wave echoes, the swept-beam teardrop point spread function, acoustic impedance, and Beer–Lambert attenuation. Lecture 1 notebooks: NuclearImaging_PET_SPECT, SegmentationQuantification, Ultrasound_MMode. Lecture 2 notebooks: Ultrasound_PSF_Convolution, Ultrasound_Impedance_Attenuation.
 
 [Browse this week on GitHub](https://github.com/menonpg/BIOENG1340-2026/tree/main/Week12)
 

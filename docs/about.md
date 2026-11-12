@@ -19,7 +19,7 @@ Course materials and coursework for **BIOENG 1340/2340 (Fall 2026)**: medical im
 - **Week09** — Algebraic CT Reconstruction & Study Design
 - **Week10** — CT Image Formation & Reconstruction
 - **Week11** — CT Artifacts, Contrast Agents, Dosimetry & Group Statistics
-- **Week12** — Nuclear Imaging, SPECT/PET & Project Methods Review
+- **Week12** — Nuclear Imaging, Ultrasound Physics & Project Stand-ups
 
 ## Tools
 
