@@ -29,7 +29,7 @@ hero: true
 <a class="card" href="{{ '/week10/' | relative_url }}"><span class="card-week">Week 10</span><span class="card-topic">CT Image Formation &amp; Reconstruction</span><span class="card-meta">3 notebooks</span></a>
 <a class="card" href="{{ '/week11/' | relative_url }}"><span class="card-week">Week 11</span><span class="card-topic">CT Artifacts, Contrast Agents, Dosimetry &amp; Group Statistics</span><span class="card-meta">4 notebooks</span></a>
 <a class="card" href="{{ '/week12/' | relative_url }}"><span class="card-week">Week 12</span><span class="card-topic">Nuclear Imaging, Ultrasound Physics &amp; Project Stand-ups</span><span class="card-meta">4 notebooks</span></a>
-<a class="card" href="{{ '/week13/' | relative_url }}"><span class="card-week">Week 13</span><span class="card-topic">Ultrasound Image Formation, Doppler &amp; Final-Project Logistics</span><span class="card-meta">1 notebook</span></a>
+<a class="card" href="{{ '/week13/' | relative_url }}"><span class="card-week">Week 13</span><span class="card-topic">Ultrasound Image Formation, Doppler &amp; Final-Project Logistics</span><span class="card-meta">4 notebooks</span></a>
 </div>
 <div class="explore">
   <a class="pill" href="{{ '/notebooks/' | relative_url }}">All notebooks</a>

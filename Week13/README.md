@@ -7,6 +7,9 @@
 | File | Description |
 |------|-------------|
 | [Ultrasound_Impedance_Attenuation.ipynb](Ultrasound_Impedance_Attenuation.ipynb) | Acoustic impedance $Z=\rho c$ and the reflection coefficient at boundaries; Beer–Lambert attenuation and the resolution/penetration trade-off; build an A-line and a B-mode image of a phantom (cyst, stone), with time-gain compensation, shadowing, posterior enhancement, and a frequency comparison. Introduced in Week 12 and reviewed this week. |
+| [Ultrasound_Beamforming_Aperture.ipynb](Ultrasound_Beamforming_Aperture.ipynb) | The transmit beam as the **Fourier transform of the aperture** (width vs beam width, apodization vs side lobes, grating lobes), **delay laws** for plane, steered, focused, and diverging waves with simulated pressure fields, focal width $\approx1.2\lambda F/D$, and a 2-D aperture showing coarse elevation (slice-thickness) resolution. |
+| [Ultrasound_Doppler.ipynb](Ultrasound_Doppler.ipynb) | Doppler shift $f_d=2f_0v\cos\theta/c$ and angle errors; pulsed-wave slow-time sampling, Nyquist velocity and **aliasing** (sweep and spectrogram); a **color Doppler** map of an arch vessel with a jet (red/blue coding, zero band at $90^\circ$, aliasing mosaic); **CW vs PW** spectra. |
+| [Ultrasound_Speckle_Tracking.ipynb](Ultrasound_Speckle_Tracking.ipynb) | **Speckle** as Rayleigh statistics (SNR $\approx1.91$), a simulated B-mode phantom, **median vs Gaussian filtering** (CNR vs resolution), **compounding** ($\sqrt N$ gain), and **speckle tracking** by normalized cross-correlation block matching to recover displacement and strain. |
 
 Related: [Week12/Ultrasound_PSF_Convolution.ipynb](../Week12/Ultrasound_PSF_Convolution.ipynb) (the teardrop point spread function of a swept scan line) and [Week12/Ultrasound_MMode.ipynb](../Week12/Ultrasound_MMode.ipynb).
 
@@ -61,7 +64,7 @@ Spatial detail depends on the **beam width and focus**, the **pulse duration and
 
 ### Speckle, tracking, and tagging
 
-- Reflectors in the field of view are also called **speckle**; speckle helps form the image, but it appears as noise afterward. A **median filter** (a simple statistical filter over a sliding window, effective on salt-and-pepper noise) is a common post-processing step to smooth speckle and improve SNR. Code for this will be added.
+- Reflectors in the field of view are also called **speckle**; speckle helps form the image, but it appears as noise afterward. A **median filter** (a simple statistical filter over a sliding window, effective on salt-and-pepper noise) is a common post-processing step to smooth speckle and improve SNR; see [Ultrasound_Speckle_Tracking.ipynb](Ultrasound_Speckle_Tracking.ipynb).
 - **Speckle tracking** follows the speckle pattern between frames to estimate **2-D strain**, tissue biomechanics, and flow in the heart and vessels. The instructor described a 3-D example: tracking the surface of the left atrial appendage across cardiac phases, with point-to-point surface correspondences (each point matched to the nearest triangle on the next phase's surface) to make heat maps of regional contractile function.
 - **MRI tagging** is the analogue: in a short-axis black-blood T1-weighted spin-echo cine, a grid of dark tag lines is written into the tissue and fades over the cardiac cycle, showing twisting (torsion) of the heart. Each frame is gated across many heartbeats (for example about 50 cycles). Torsion, strain, and hoop stress estimated from the tags are relevant to conditions such as hypertrophic cardiomyopathy. The instructor wrote a plugin for tagging visualization. In ultrasound, a "tagged" PSF with multiple point-spread regions supports the same kind of strain and torsion estimate, though less obviously than in MRI.
 
@@ -79,8 +82,8 @@ Ultrasound is **inexpensive and radiation-free**, with fairly low resolution, li
 4. repeat for many scan lines to make a **B-mode image** of a phantom, with and without time-gain compensation;
 5. compare 2.5, 5, and 10 MHz: **2.5 MHz** reaches about 24 cm in liver but has coarse lateral detail; **5 and 10 MHz** show the cyst boundary more clearly and with less speckle but lose depth to attenuation. Higher frequency buys resolution at the cost of penetration.
 
-The notebooks for this week will be extended with the demos reviewed on Thursday, and the course returns to image-processing topics after ultrasound.
+The beam-formation, Doppler, and speckle material above is simulated in the three new notebooks listed in the Contents table. The course returns to image-processing topics after ultrasound.
 
 ## Environment
 
-The notebook uses Python with **NumPy**, **SciPy**, and **matplotlib**.
+The notebooks use Python with **NumPy**, **SciPy**, **scikit-image** (block matching), and **matplotlib**.
