@@ -122,3 +122,29 @@ Teams should make a big push before **Tuesday** toward an **end-to-end pipeline 
 shape features ([Week12/SegmentationQuantification.ipynb](../Week12/SegmentationQuantification.ipynb)), FSL (skull
 stripping, registration, orientation, preprocessing), BASIL, and statistics from
 [Week11/ComparingTwoGroups.ipynb](../Week11/ComparingTwoGroups.ipynb).
+
+## Fifth discussion (Nov 17) — schedule, deliverables & stand-ups
+
+**Schedule (supersedes the Nov 12 "midterm review" timing)**
+
+| Date | Milestone |
+|------|-----------|
+| **Thu Nov 19** | **Midterm presentation**: 2–4 slides at most covering the **problem**, the **hypothesis and specific aims**, **progress** on each aim with illustrations, and **statistics or methods** completed so far. More than a stand-up. |
+| Nov 24 / 26 | No class (Thanksgiving week). |
+| Tue Dec 1 | Class. |
+| **Thu Dec 3** | **Final project presentations**, all four teams, about 15–20 minutes each including Q&A: slides plus poster or report, and a demo if available. |
+| Dec 8 / 10 | Class. |
+| **Sun Dec 6** (target) / **Thu Dec 10** (deadline) | **Final submission** of all materials; may be updated after the presentation through Dec 10. Outstanding assignments (for example Assignment 3 part 2) share this deadline. |
+
+Calendar reference: last undergraduate class day Dec 4, reading day Dec 5, finals begin Dec 7, term ends Dec 12.
+
+**Deliverables:** a poster, or an IEEE/ASME-style paper/report (graduate students choose between them; poster optional); the final slide deck; **datasets in Google Drive**; **code in GitHub** (previously optional, now expected, with **20 bonus points**). Public repositories, pinned on your profile, and a GitHub Pages demo page show your work well; Copilot can add Open-in-Colab links and mirror the course-repo setup (see [Week13/README.md](../Week13/README.md)).
+
+| Team | Update | Plan / blockers | Guidance |
+|------|--------|-----------------|----------|
+| Xinyue & Shiqi (retinal vasculature) | Finished the analysis. | Working out how to make the **poster** (possibly for a conference); submit after next week. | A poster is optional, but is worth doing if it serves the conference. |
+| Hanna & Christian (echocardiography) | Finalized the **2-D video to 3-D volume** method and found a resource for making measurements. | **Robustness tests**: degrade the input (add noise rather than downsample) to emulate less-trained sonographers, and check whether the LV can still be isolated and measured; then poster and results. | Use Copilot, including its browser automation, to test the software. |
+| Harrison & Ashvin (Alzheimer's hippocampus) | Presentation mapped out; segmenting in **ITK-SNAP** and **ParaView**. Ventricle samples done (easier); trial runs on the **hippocampus** in progress using online tutorials and videos. | Blocker: how to segment the hippocampus. | Harrison to send a note confirming the ROI (hippocampus vs ventricles). All four members should help with segmentation and get a few controls and patients done. |
+| Jen & Yosi (fMRI connectivity) | Absent. | Instructor to get an update later. | — |
+
+**Next:** a short stand-up plus the midterm slides on Thursday Nov 19.

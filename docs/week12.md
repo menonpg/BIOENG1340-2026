@@ -2,7 +2,7 @@
 title: "Week 12 — Nuclear Imaging, Ultrasound Physics & Project Stand-ups"
 ---
 
-**Lecture 1 (Nov 10)** opened with a review of project-analysis notebooks from Week 11, then developed nuclear imaging from radiotracer physics through SPECT/PET acquisition, reconstruction, and image fusion. **Lecture 2 (Nov 12)** began with the first Kanban-style project stand-ups, then introduced **ultrasound** physics and image formation: pressure-wave echoes, the swept-beam teardrop point spread function, acoustic impedance, and Beer–Lambert attenuation. Lecture 1 notebooks: NuclearImaging_PET_SPECT, SegmentationQuantification, Ultrasound_MMode. Lecture 2 notebooks: Ultrasound_PSF_Convolution, Ultrasound_Impedance_Attenuation.
+**Lecture 1 (Nov 10)** opened with a review of project-analysis notebooks from Week 11, then developed nuclear imaging from radiotracer physics through SPECT/PET acquisition, reconstruction, and image fusion. **Lecture 2 (Nov 12)** began with the first Kanban-style project stand-ups, then introduced **ultrasound** physics and image formation: pressure-wave echoes, the swept-beam teardrop point spread function, acoustic impedance, and Beer–Lambert attenuation. Lecture 1 notebooks: NuclearImaging_PET_SPECT, SegmentationQuantification, Ultrasound_MMode. Lecture 2 notebooks: Ultrasound_PSF_Convolution, and Ultrasound_Impedance_Attenuation (now in [Week 13](../Week13/)).
 
 [Browse this week on GitHub](https://github.com/menonpg/BIOENG1340-2026/tree/main/Week12)
 
@@ -19,12 +19,6 @@ After MRI, CT, and ultrasound we turn to **nuclear imaging** (scintigraphy). A *
 Once you have a **3-D segmentation mask** (from ITK-SNAP, ParaView, or an AI model), the next step is to turn it into **numbers**: a physical **volume** and **shape descriptors**. This is the core measurement step for several class projects (hippocampus volume, left-ventricle volume over time, optic-nerve-head vessel morphology).
 
 [View on GitHub](https://github.com/menonpg/BIOENG1340-2026/blob/main/Week12/SegmentationQuantification.ipynb) · [nbviewer](https://nbviewer.org/github/menonpg/BIOENG1340-2026/blob/main/Week12/SegmentationQuantification.ipynb) · [Open in Colab](https://colab.research.google.com/github/menonpg/BIOENG1340-2026/blob/main/Week12/SegmentationQuantification.ipynb) · [Download](https://raw.githubusercontent.com/menonpg/BIOENG1340-2026/main/Week12/SegmentationQuantification.ipynb)
-
-### [Week 12 — Ultrasound image formation: acoustic impedance and Beer–Lambert attenuation]({{ '/notebooks/week12-ultrasound-impedance-attenuation/' | relative_url }})
-
-A scanning ultrasound probe collects **line data**: it sends a pressure pulse down one scan line and records the echoes that return. Two physical ideas decide what those echoes look like.
-
-[View on GitHub](https://github.com/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_Impedance_Attenuation.ipynb) · [nbviewer](https://nbviewer.org/github/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_Impedance_Attenuation.ipynb) · [Open in Colab](https://colab.research.google.com/github/menonpg/BIOENG1340-2026/blob/main/Week12/Ultrasound_Impedance_Attenuation.ipynb) · [Download](https://raw.githubusercontent.com/menonpg/BIOENG1340-2026/main/Week12/Ultrasound_Impedance_Attenuation.ipynb)
 
 ### [Week 12 — Ultrasound M-mode (a scan line over time)]({{ '/notebooks/week12-ultrasound-mmode/' | relative_url }})
 
