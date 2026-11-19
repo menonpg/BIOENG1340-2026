@@ -1,6 +1,6 @@
-# Week 13 — Ultrasound Image Formation, Doppler & Final-Project Logistics
+# Week 13 — Ultrasound Image Formation, Doppler & Midterm Project Presentations
 
-**Lecture 1 (Nov 17)** settled the end-of-semester schedule and final-project deliverables, then continued **ultrasound image formation**: what a pressure wave is (longitudinal vs transverse), how a piezoelectric transducer generates it, beam formation as interference of spherical wavelets, 3-D ultrasound, **Doppler** velocimetry, speckle and speckle tracking, and a walkthrough of the A-line / B-mode simulation notebook. The class ended with a short project stand-up.
+**Lecture 1 (Nov 17)** settled the end-of-semester schedule and final-project deliverables, then continued **ultrasound image formation**: what a pressure wave is (longitudinal vs transverse), how a piezoelectric transducer generates it, beam formation as interference of spherical wavelets, 3-D ultrasound, **Doppler** velocimetry, speckle and speckle tracking, and a walkthrough of the A-line / B-mode simulation notebook. The class ended with a short project stand-up. **Lecture 2 (Nov 19)** was the four teams' **midterm project presentations**, followed by a tour of the new Week 13 notebooks on beamforming, Doppler, and speckle filtering/tracking.
 
 ## Contents
 
@@ -83,6 +83,53 @@ Ultrasound is **inexpensive and radiation-free**, with fairly low resolution, li
 5. compare 2.5, 5, and 10 MHz: **2.5 MHz** reaches about 24 cm in liver but has coarse lateral detail; **5 and 10 MHz** show the cyst boundary more clearly and with less speckle but lose depth to attenuation. Higher frequency buys resolution at the cost of penetration.
 
 The beam-formation, Doppler, and speckle material above is simulated in the three new notebooks listed in the Contents table. The course returns to image-processing topics after ultrasound.
+
+## Lecture 2 notes (Nov 19)
+
+### Midterm project presentations
+
+All four teams presented their progress and Kanban boards; the full record, with feedback, is in [Project/README.md](../Project/README.md) ("Sixth discussion"). In brief:
+
+- **Retinal vasculature:** VesselFM (a 3-D vessel segmentation foundation model) reaches about 95% overlap with a manual label; skeletonization and MATLAB analysis follow.
+- **Echocardiography:** a MedSAM foundation model fine-tuned on the provided masks now gives usable left-ventricle masks, stacked over time and visualized in ParaView.
+- **Alzheimer's:** switched from hippocampus to **ventricles** (volume within 6% of the voxel count on a practice run) and reduced the cohort to 16 or 32 subjects.
+- **fMRI connectivity (developmental prosopagnosia):** eight ROIs defined; connectivity extraction under way, with the 14 DP and 22 control participants preprocessed.
+
+**Final presentation expectations (Dec 3):** same format as today, with more on the imaging modality (at least one slide on the physics of image formation, what it is used for, and the pulse sequence if MRI), practical methods with an illustration or demo, the data collected, findings with a visualization of the statistics, a conclusion, and your Git repository and artifacts (including a draft report or poster if not finished). All artifacts are due **Dec 10** and whatever is in the repository then is what is assessed. There is **no Assignment 5** (Canvas lists one, but it will not be given).
+
+### Notebook walkthrough
+
+The week's slides were turned into notebooks, so we do not need to become ultrasound experts; the aim is to see how an ultrasound image is simulated, how its beam is formed, and how its noise can be improved.
+
+**[Ultrasound_Beamforming_Aperture.ipynb](Ultrasound_Beamforming_Aperture.ipynb)**
+
+- **Near field vs far field:** in the near field spherical wavelets from the elements interact strongly. In the far field the wavefront becomes planar (or converging, for a focused beam). The far field is where the useful beam is, and its shape is the **Fourier transform of the aperture** for a uniform grid of elements.
+- Parameters: $c$ in soft tissue, a 3 MHz centre frequency, then the wavelength.
+- **More elements, sharper beam; fewer elements, wider central lobe.** Summing spherical waves explicitly matches the FFT of the aperture exactly, which validates the statement.
+- **Aperture weights (apodization)** suppress side lobes. Steering and grating lobes were not covered in class.
+- **Delay laws** produce plane, steered-plane, focused, and diverging beams, drawn as images in a field of view by the continuous-wave field function.
+- A 2-D aperture gives both lateral and elevation resolution (section 6).
+
+**[Ultrasound_Doppler.ipynb](Ultrasound_Doppler.ipynb)**
+
+- The **frequency shift is proportional to the velocity component along the beam**. With no component along the beam there is no signal, so the beam needs an acute angle to the flow; the Doppler shift falls toward zero as the angle approaches $90^\circ$ and the velocity error grows with it. Using Doppler therefore needs some knowledge of the flow direction.
+- Nyquist sampling and aliasing (sections 2–3) were not covered in class.
+- The **color Doppler** simulation of a curved vessel with a jet is the one worth trying: change parameters and see how the flow image changes.
+- **Pulsed-wave** Doppler gives the velocities at one chosen depth (for example the valve plane); **continuous-wave** gives all velocities along the beam with **no range resolution**, so the depth of each velocity must be inferred.
+
+**[Ultrasound_Speckle_Tracking.ipynb](Ultrasound_Speckle_Tracking.ipynb)**
+
+- Scatterers (speckles) in the field of view create the returning wavelets that form the signal; the notebook simulates a B-mode image with speckle.
+- **Median filtering** (non-linear, statistical) vs **Gaussian filtering** (convolution with a low-pass kernel): the raw image has a contrast-to-noise ratio of **4.11**; the median filter raises it by removing outlier intensities (salt-and-pepper-like speckle) within a sliding window, with a partial blurring effect but better edge preservation. A Gaussian filter also improves SNR but removes detail. **Edge-preserving smoothing** is a whole field, and the median filter is one of many non-linear filters used for it.
+- **Averaging $N$ images** of a static object improves SNR by about $\sqrt N$ when the noise is well behaved; relevant to ultrasound of static objects and to low-count nuclear imaging.
+- **Speckle tracking** estimates a displacement map from the motion of speckle, a route to strain and deformation. The lecturer described his own first attempt as not working; the version in this notebook was checked numerically (strain recovered to within 0.0002 of the true value) and now overlays the true and estimated arrows so agreement can be seen.
+- The impedance/attenuation notebook and the Beer–Lambert material were covered earlier.
+
+### Next
+
+- **No class Tue Nov 24 or Thu Nov 26** (Thanksgiving). Finish projects and assignments.
+- **Tue Dec 1:** theory in image processing: **image registration** and 2-D image processing from the standpoint of **edge-preserving smoothing**, partly as slides, tying together the segmentation, registration, and filtering concepts from earlier weeks.
+- **Thu Dec 3:** final project presentations.
 
 ## Environment
 

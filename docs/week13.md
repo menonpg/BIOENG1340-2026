@@ -1,8 +1,8 @@
 ---
-title: "Week 13 — Ultrasound Image Formation, Doppler & Final-Project Logistics"
+title: "Week 13 — Ultrasound Image Formation, Doppler & Midterm Project Presentations"
 ---
 
-**Lecture 1 (Nov 17)** settled the end-of-semester schedule and final-project deliverables, then continued **ultrasound image formation**: what a pressure wave is (longitudinal vs transverse), how a piezoelectric transducer generates it, beam formation as interference of spherical wavelets, 3-D ultrasound, **Doppler** velocimetry, speckle and speckle tracking, and a walkthrough of the A-line / B-mode simulation notebook. The class ended with a short project stand-up.
+**Lecture 1 (Nov 17)** settled the end-of-semester schedule and final-project deliverables, then continued **ultrasound image formation**: what a pressure wave is (longitudinal vs transverse), how a piezoelectric transducer generates it, beam formation as interference of spherical wavelets, 3-D ultrasound, **Doppler** velocimetry, speckle and speckle tracking, and a walkthrough of the A-line / B-mode simulation notebook. The class ended with a short project stand-up. **Lecture 2 (Nov 19)** was the four teams' **midterm project presentations**, followed by a tour of the new Week 13 notebooks on beamforming, Doppler, and speckle filtering/tracking.
 
 [Browse this week on GitHub](https://github.com/menonpg/BIOENG1340-2026/tree/main/Week13)
 

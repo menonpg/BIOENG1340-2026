@@ -20,7 +20,7 @@ Course materials and coursework for **BIOENG 1340/2340 (Fall 2026)**: medical im
 - **Week10** — CT Image Formation & Reconstruction
 - **Week11** — CT Artifacts, Contrast Agents, Dosimetry & Group Statistics
 - **Week12** — Nuclear Imaging, Ultrasound Physics & Project Stand-ups
-- **Week13** — Ultrasound Image Formation, Doppler & Final-Project Logistics
+- **Week13** — Ultrasound Image Formation, Doppler & Midterm Project Presentations
 
 ## Tools
 
